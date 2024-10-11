@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://mupgruju5vpd"]
+
+[ext_resource type="Script" path="res://Scenes/pellet.gd" id="1_11s2b"]
+[ext_resource type="Texture2D" uid="uid://b463qbwwhkmi" path="res://Sprites/Shitwizard.png" id="1_yt7i3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pw0j5"]
+radius = 18.0
+
+[node name="Pellet" type="Area2D"]
+script = ExtResource("1_11s2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yt7i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pw0j5")
