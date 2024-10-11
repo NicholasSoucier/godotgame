@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ffg7mvg6lew5"]
+
+[ext_resource type="Texture2D" uid="uid://b463qbwwhkmi" path="res://Sprites/Shitwizard.png" id="1_fvige"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_h3jcv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcguu"]
+atlas = ExtResource("1_fvige")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iad7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcguu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q73fy"]
+radius = 18.1108
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_h3jcv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iad7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q73fy")
